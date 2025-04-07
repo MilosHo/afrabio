@@ -1,0 +1,260 @@
+#tmsearch {
+  display: inline-block;
+  margin-left: 30px;
+  position: relative;
+  z-index: 1; }
+  @media (min-width: 767px) {
+    #tmsearch {
+      float: right; } }
+  @media (max-width: 767px) {
+    #tmsearch {
+      margin: 0 15px 20px; } }
+  #tmsearch .current {
+    color: #2e1532;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 25px;
+    line-height: 25px;
+    -moz-transition: all 0.25s ease;
+    -o-transition: all 0.25s ease;
+    -webkit-transition: all 0.25s ease;
+    transition: all 0.25s ease; }
+    #tmsearch .current:before {
+      font-family: "fl-outicons";
+      content: "\e032"; }
+    #tmsearch .current:hover {
+      color: #009846; }
+  #tmsearch.active-search #tmsearchbox {
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    width: 320px; }
+    @media (min-width: 767px) {
+      #tmsearch.active-search #tmsearchbox {
+        width: 400px; } }
+  #tmsearch.active-search .btn.button-search {
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    opacity: 1; }
+  #tmsearch #tmsearchbox {
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+    border: none;
+    position: absolute;
+    top: -13px;
+    right: 0;
+    width: 0;
+    overflow: hidden; }
+    @media (max-width: 767px) {
+      #tmsearch #tmsearchbox {
+        right: -125px; } }
+  #tmsearch #tm_search_query {
+    height: 49px;
+    background: white;
+    border: none;
+    border-radius: 25px;
+    color: #a579ac;
+    padding: 5px 70px 5px 60px; }
+    @media (min-width: 768px) {
+      #tmsearch #tm_search_query {
+        padding: 5px 210px 5px 60px; } }
+    #tmsearch #tm_search_query.form-control::-moz-placeholder {
+      color: #a579ac; }
+  #tmsearch .btn.button-search {
+    background: none;
+    color: #a579ac;
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: none;
+    width: 49px;
+    text-align: center;
+    height: 50px;
+    padding: 6px 0 6px 10px;
+    opacity: 0;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease; }
+    #tmsearch .btn.button-search span {
+      display: none; }
+    #tmsearch .btn.button-search:before {
+      content: "\e032";
+      display: block;
+      font-family: "fl-outicons";
+      font-size: 25px;
+      line-height: 1;
+      text-align: center;
+      width: 100%; }
+    #tmsearch .btn.button-search:hover {
+      color: #009846; }
+    @media (max-width: 479px) {
+      #tmsearch .btn.button-search {
+        opacity: 1; } }
+  @media (max-width: 479px) {
+    #tmsearch.active-search #tmsearchbox {
+      width: 270px; }
+    #tmsearch #tmsearchbox {
+      left: auto;
+      right: -100px; } }
+  #tmsearch .selector {
+    position: absolute;
+    right: 10px;
+    top: 5px; }
+    @media (max-width: 767px) {
+      #tmsearch .selector {
+        width: 49px !important;
+        padding: 0;
+        min-width: inherit; }
+        #tmsearch .selector span {
+          text-indent: -999px; }
+          #tmsearch .selector span::after {
+            text-indent: 0; } }
+  #tmsearch select {
+    width: 180px; }
+    @media (max-width: 479px) {
+      #tmsearch select {
+        width: 120px; } }
+    #tmsearch select option {
+      padding: 5px; }
+  #tmsearch #tmsearch_result {
+    -moz-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.3);
+    box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.3);
+    position: absolute;
+    left: auto;
+    top: calc(100% + 8px);
+    background: white;
+    width: 320px;
+    right: 0;
+    z-index: 5;
+    padding: 15px;
+    border-top: 5px solid white;
+    text-align: left; }
+    @media (min-width: 1600px) {
+      #tmsearch #tmsearch_result {
+        width: 400px; } }
+    #tmsearch #tmsearch_result .search-page {
+      overflow: hidden;
+      clear: both; }
+    #tmsearch #tmsearch_result .tmsearch-row {
+      padding: 15px;
+      margin-top: 30px;
+      overflow: hidden;
+      cursor: pointer;
+      transition: all 0.15s ease; }
+      #tmsearch #tmsearch_result .tmsearch-row .tmsearch-inner-row {
+        position: relative; }
+        #tmsearch #tmsearch_result .tmsearch-row .tmsearch-inner-row img {
+          margin-right: 15px;
+          background: #ffffff;
+          float: left; }
+      #tmsearch #tmsearch_result .tmsearch-row:first-child {
+        margin: 0; }
+      #tmsearch #tmsearch_result .tmsearch-row:hover {
+        background: #d2dae3; }
+    #tmsearch #tmsearch_result .reference, #tmsearch #tmsearch_result .quantity, #tmsearch #tmsearch_result .availability {
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 15px 0 0;
+      font-size: 12px; }
+      #tmsearch #tmsearch_result .reference.availability, #tmsearch #tmsearch_result .quantity.availability, #tmsearch #tmsearch_result .availability.availability {
+        text-decoration: underline; }
+      #tmsearch #tmsearch_result .reference.quantity, #tmsearch #tmsearch_result .quantity.quantity, #tmsearch #tmsearch_result .availability.quantity {
+        color: #2e1532; }
+    #tmsearch #tmsearch_result .name {
+      display: block;
+      font-size: 15px;
+      line-height: 21px;
+      font-weight: bold;
+      margin: 5px 0; }
+      #tmsearch #tmsearch_result .name strong {
+        color: black; }
+    #tmsearch #tmsearch_result .price {
+      color: #333;
+      font-size: 13px;
+      font-weight: bold;
+      position: absolute;
+      right: 0;
+      top: 0; }
+      #tmsearch #tmsearch_result .price.new-price {
+        color: #009846; }
+    #tmsearch #tmsearch_result .description-short {
+      margin-bottom: 10px; }
+    #tmsearch #tmsearch_result div > strong {
+      font-weight: normal;
+      color: black; }
+    #tmsearch #tmsearch_result .manufacturer-name, #tmsearch #tmsearch_result .supplier-name {
+      float: right;
+      margin-left: 20px;
+      display: block;
+      background: #d2dae3;
+      padding: 3px 7px;
+      font-size: 11px;
+      line-height: 15px; }
+    #tmsearch #tmsearch_result.loading {
+      opacity: 0.5; }
+    #tmsearch #tmsearch_result div.hidden-row, #tmsearch #tmsearch_result div.hidden-page {
+      display: none; }
+    #tmsearch #tmsearch_result .pagers {
+      float: right;
+      padding-top: 15px; }
+      #tmsearch #tmsearch_result .pagers a {
+        background: #f7f7f7;
+        padding: 5px 10px;
+        margin: 0 3px;
+        display: inline-block;
+        text-decoration: none; }
+        #tmsearch #tmsearch_result .pagers a:hover, #tmsearch #tmsearch_result .pagers a.active, #tmsearch #tmsearch_result .pagers a:focus {
+          background: #eee;
+          color: #000;
+          outline: none; }
+    #tmsearch #tmsearch_result .navigation {
+      float: right;
+      padding-top: 15px; }
+      #tmsearch #tmsearch_result .navigation.top {
+        padding-top: 0;
+        padding-bottom: 15px; }
+      #tmsearch #tmsearch_result .navigation > a {
+        float: left;
+        font-size: 24px;
+        padding: 2px 0;
+        text-decoration: none; }
+        #tmsearch #tmsearch_result .navigation > a.disabled {
+          cursor: default;
+          color: #cccccc; }
+        #tmsearch #tmsearch_result .navigation > a:hover, #tmsearch #tmsearch_result .navigation > a.active, #tmsearch #tmsearch_result .navigation > a:focus {
+          outline: none; }
+      #tmsearch #tmsearch_result .navigation .pagers {
+        float: left;
+        padding-top: 0; }
+      #tmsearch #tmsearch_result .navigation .count-pages {
+        float: left;
+        font-size: 17px;
+        padding: 5px 10px; }
+        #tmsearch #tmsearch_result .navigation .count-pages .current {
+          color: #000000; }
+    #tmsearch #tmsearch_result .tmsearch-alllink {
+      padding-top: 20px;
+      float: left; }
+      #tmsearch #tmsearch_result .tmsearch-alllink a {
+        display: block; }
+        #tmsearch #tmsearch_result .tmsearch-alllink a:after {
+          font-family: "FontAwesome";
+          content: '\f021';
+          font-size: 24px;
+          margin-left: 10px;
+          vertical-align: -4px;
+          color: #85ce90; }
+
+body #tmsearch div.selector span {
+  width: 180px !important; }
+  @media (max-width: 479px) {
+    body #tmsearch div.selector span {
+      width: 120px !important; } }

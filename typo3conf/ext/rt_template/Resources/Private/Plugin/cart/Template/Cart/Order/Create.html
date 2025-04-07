@@ -1,0 +1,64 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Default"/>
+
+<f:section name="main">
+    <script>
+        setTimeout(function(){
+            gtag('event', 'purchase', {
+              transaction_id: '<f:format.htmlentitiesDecode>{cart.orderNumber}</f:format.htmlentitiesDecode>',
+              value: <f:format.htmlentitiesDecode>{cart.gross}</f:format.htmlentitiesDecode>,
+              tax: {cart.taxes.1},
+              shipping: {cart.shipping.gross},
+              currency: 'EUR',
+              items: [
+                <f:for each="{cart.products}" as="product" iteration="iterator">
+                    {
+                     item_id: '<f:format.htmlentitiesDecode>{product.productId}</f:format.htmlentitiesDecode>',
+                     item_name: '{product.title}',
+                     price: {product.price},
+                     quantity: {product.quantity}
+                    }
+                    <f:if condition="{iterator.isLast}"><f:then></f:then><f:else>,</f:else></f:if>
+                </f:for>
+              ]
+            });
+
+            ffbq('track', 'Purchase', {
+                currency: "EUR", 
+                value: <f:format.htmlentitiesDecode>{cart.gross}</f:format.htmlentitiesDecode>
+            });
+            
+            window.ecotrack('addTrans',
+                '<f:format.htmlentitiesDecode>{cart.orderNumber}</f:format.htmlentitiesDecode>',             // ID objednávky - povinné
+                'AFRAbio',  // jméno obchodu - povinné
+                '<f:format.htmlentitiesDecode>{cart.gross}</f:format.htmlentitiesDecode>',              // částka celkem včetně daně - povinné
+                '23',               // daň
+                '6',               // cena dopravy
+                '<f:format.htmlentitiesDecode>{orderItem.billingAddress.city}</f:format.htmlentitiesDecode>',            // f.a. - město
+                '<f:format.htmlentitiesDecode>{orderItem.billingAddress.city}</f:format.htmlentitiesDecode>',            // f.a. - okres / kraj
+                '<f:format.htmlentitiesDecode>{orderItem.billingAddress.coutry}</f:format.htmlentitiesDecode>'                // f.a. - země
+              );
+          
+            <f:for each="{cart.products}" as="product" iteration="iterator">
+                window.ecotrack('addItem',
+                    '<f:format.htmlentitiesDecode>{cart.orderNumber}</f:format.htmlentitiesDecode>',           // ID objednávky - povinné, musí být shoda s ID objednávky z addTrans
+                    '<f:format.htmlentitiesDecode>{product.sku}</f:format.htmlentitiesDecode>',           // kód produktu - povinné
+                    '<f:format.htmlentitiesDecode>{product.title}</f:format.htmlentitiesDecode>',         // název produktu
+                    '<f:format.htmlentitiesDecode>{product.category.title}</f:format.htmlentitiesDecode>',         // kategorie / variace produktu
+                    '<f:format.htmlentitiesDecode>{product.price}</f:format.htmlentitiesDecode>',            // částka cena za jednotku včetně daně - povinné
+                    '<f:format.htmlentitiesDecode>{product.quantity}</f:format.htmlentitiesDecode>'               // množství - povinné
+                  );
+            </f:for>
+            window.ecotrack('trackTrans');
+        }, 1000);
+    </script>
+    <div class="order-success-message">
+        <div class="alert alert-success">
+            <h3><f:translate key="tx_cart.controller.order.action.order_cart.thank_you"/></h3>
+            <f:translate key="tx_cart.controller.order.action.order_cart.thank_you_order_number" arguments="{1: cart.orderNumber}" />
+        </div>
+    </div>
+</f:section>
+</html>

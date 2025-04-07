@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<rss xmlns:g="http://base.google.com/ns/1.0" version="2.0">
+<channel>
+<title>Afrabio.sk</title>
+<link>https://www.afrabio.sk</link>
+<f:for each="{products}" as ="product">
+    <item>
+
+        <g:id>{product.sku}</g:id>
+        <g:title>{product.title}</g:title>
+        <g:description>{product.description}</g:description>
+        <g:link>https://www.afrabio.sk<f:uri.action action="show" controller="Product" pluginName="products" extensionName="cartproducts" pageUid="20" arguments="{product:product.uid}" ></f:uri.action></g:link> 
+        <g:image_link>https://www.afrabio.sk<f:uri.image image="{product.images.0}"></f:uri.image></g:image_link> 
+        <g:condition></g:condition>
+        <g:availability>in stock</g:availability>
+        <g:price>{product.price} EUR</g:price>
+        <g:shipping>
+
+            <g:country>SK</g:country>
+            <g:service>Standard</g:service>
+            <g:price>4 EUR</g:price>
+
+        </g:shipping>
+        <g:gtin>1234567890{product.uid}</g:gtin>
+        <g:brand>AFRAbio</g:brand>
+
+    </item>
+</f:for>
+</channel>
+</rss>

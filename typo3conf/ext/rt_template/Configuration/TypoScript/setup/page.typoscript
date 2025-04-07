@@ -1,0 +1,176 @@
+page {
+    shortcutIcon = EXT:rt_template/Resources/Public/Icons/favicon.ico
+    headerData {
+        20 = TEXT
+        20.value = <meta name="facebook-domain-verification" content="tln3l3liv2jqfq0mibd0xb5r5xgl9k" />
+
+        30 = TEXT
+        30.value (
+<script>
+// Define dataLayer and the gtag function.
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+
+// Set default consent to 'denied' as a placeholder
+// Determine actual values based on your own requirements
+gtag('consent', 'default', {
+  'ad_storage': 'denied',
+  'ad_user_data': 'denied',
+  'ad_personalization': 'denied',
+  'analytics_storage': 'denied'
+});
+</script>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-4186993-3"></script>
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PDG94P3R');</script>
+<!-- End Google Tag Manager -->
+
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+
+  gtag('js', new Date());
+  gtag('config', 'UA-4186993-3');
+
+  function consentGrantedAdStorage() {
+    gtag('consent', 'update', {
+        'ad_storage': 'granted',
+        'ad_user_data': 'granted',
+        'ad_personalization': 'granted',
+        'analytics_storage': 'granted'
+    });
+  }
+
+</script>
+<meta name="google-site-verification" content="Xn05rtRh411DhigE5N9VHfufiEc-wTRlW3zZetgX8do" />
+)
+        }
+
+    10 {
+        templateRootPaths.3 = EXT:rt_template/Resources/Private/Page/Templates/
+        layoutRootPaths.3 = EXT:rt_template/Resources/Private/Page/Layouts/
+        partialRootPaths.3 = EXT:rt_template/Resources/Private/Page/Partials/
+
+        dataProcessing {
+            10 {
+                levels = 1
+                special = directory
+                special.value = 85
+            }
+
+            60 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            60 {
+                as = categorynavigation
+                special = directory 
+                special.value = 5
+                levels = 2
+            }
+
+            70 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            70 {
+                as = footernavigation
+                special = directory 
+                special.value = 26
+            }
+
+            80 = TYPO3\CMS\Frontend\DataProcessing\MenuProcessor
+            80 {
+                as = loginmenu
+                special = directory 
+                special.value = 49
+            }
+
+        }
+
+        variables {
+            logout = TEXT
+            logout {
+                    value = Odhlásiť
+                    typolink.parameter = 47
+                    typolink.additionalParams = &logintype=logout
+            }
+        }
+    }
+
+/* PAGE */
+#page.includeCSS.rt_template = typo3conf/ext/rt_template/Resources/Public/Css/Css/style.css
+    includeJSFooterlibs {
+        jquery = typo3conf/ext/rt_template/Resources/Public/JavaScript/jquery.min.js
+        global = typo3conf/ext/rt_template/Resources/Public/JavaScript/global.js
+        scrollto = typo3conf/ext/rt_template/Resources/Public/JavaScript/jquery.scrollTo.js
+        scroll = typo3conf/ext/rt_template/Resources/Public/JavaScript/jquery.serialScroll.js
+        rt_template = typo3conf/ext/rt_template/Resources/Public/JavaScript/custom.js
+        product = typo3conf/ext/rt_template/Resources/Public/JavaScript/product.js
+        header = typo3conf/ext/rt_template/Resources/Public/JavaScript/Header1.js
+        facebook = https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v3.0
+        facebook.external = 1
+        #superfish = typo3conf/ext/rt_template/Resources/Public/JavaScript/superfish.js
+        #hovermenu = typo3conf/ext/rt_template/Resources/Public/JavaScript/hoverIntent.js
+        packeta = https://widget.packeta.com/v6/www/js/library.js
+    }
+
+    includeCSS {
+        #theme >
+        cookies >
+
+        font1 = https://fonts.googleapis.com/css?family=Open+Sans:300,600&amp;subset=latin,latin-ext
+        font2 = https://fonts.googleapis.com/css?family=Ubuntu:300,400,500,700
+        font3 = https://fonts.googleapis.com/css?family=Yeseva+One
+
+        global = typo3conf/ext/rt_template/Resources/Public/Css/global.css
+        product = typo3conf/ext/rt_template/Resources/Public/Css/product.css
+        product_list = typo3conf/ext/rt_template/Resources/Public/Css/product_list.css
+        blockcart = typo3conf/ext/rt_template/Resources/Public/Css/modules/blockcart/blockcart.css
+        blocklanguages = typo3conf/ext/rt_template/Resources/Public/Css/modules/blocklanguages/blocklanguages.css
+        blockcontact = typo3conf/ext/rt_template/Resources/Public/Css/modules/blockcontact/blockcontact.css
+        blockpermanentlinks = typo3conf/ext/rt_template/Resources/Public/Css/modules/blockpermanentlinks/blockpermanentlinks.css
+        tmmegamenu = typo3conf/ext/rt_template/Resources/Public/Css/modules/tmmegamenu/views/css/tmmegamenu.css
+        tmcategoryproducts = typo3conf/ext/rt_template/Resources/Public/Css/modules/tmcategoryproducts/views/css/tmcategoryproducts.css
+        Footer1 = typo3conf/ext/rt_template/Resources/Public/Css/modules/tmmegalayout/views/css/layouts/Footer1.css
+        Header = typo3conf/ext/rt_template/Resources/Public/Css/modules/tmmegalayout/views/css/layouts/Header1.css
+        Home1 = typo3conf/ext/rt_template/Resources/Public/Css/modules/tmmegalayout/views/css/layouts/Home1.css
+
+        style = typo3conf/ext/rt_template/Resources/Public/Css/style.css
+    }
+
+    includeCSSLibs {
+        bootstrappackageicon >
+        googlewebfont >
+    }
+}
+
+plugin.rttemplate_productfeed.persistence.storagePid = 9
+plugin.tx_rttemplate_productfeed.persistence.storagePid = 9
+productFeed = PAGE
+productFeed {
+    typeNum = 10001
+
+    config {
+        disableAllHeaderCode = 1
+        xhtml_cleaning = 0
+        admPanel = 0
+        debug = 0
+        no_cache = 1
+    }
+
+    10 < tt_content.list.20.rttemplate_productfeed
+    10.persistence.storagePid.field = 9
+    10.storagePid.field = 9
+    10.storagePid = 9
+}
+
+plugin {
+    tx_rttemplate {
+        view {
+                templateRootPaths.0 = typo3conf/ext/rt_template/Resources/Private/Plugin/rt_template/Template/
+        }
+        persistence.storagePid = 9
+        view.storagePid = 9
+    }
+}

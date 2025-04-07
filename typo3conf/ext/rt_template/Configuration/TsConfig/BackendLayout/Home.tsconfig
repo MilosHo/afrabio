@@ -1,0 +1,37 @@
+##################################
+#### BACKENDLAYOUT: Home ####
+##################################
+mod {
+    web_layout {
+        BackendLayouts {
+            home {
+                title = Home
+                config {
+                    backend_layout {
+                        colCount = 1
+                        rowCount = 2
+                        rows {
+                            1 {
+                                columns {
+                                    1 {
+                                        name = Na celú šírku
+                                        colPos = 1
+                                    }
+                                }
+                            }
+                            2 {
+                                columns {
+                                    1 {
+                                        name = Content
+                                        colPos = 0
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+

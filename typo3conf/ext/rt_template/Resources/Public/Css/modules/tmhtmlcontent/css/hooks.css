@@ -1,0 +1,95 @@
+#tmhtmlcontent_home ul {
+  margin-bottom: 0; }
+  #tmhtmlcontent_home ul li {
+    margin-bottom: 27px;
+    padding-top: 5px; }
+    #tmhtmlcontent_home ul li h2 {
+      background: url("../../../../img/icon.png") center top no-repeat;
+      color: #2e1532;
+      font: 400 59px/70px "Ubuntu", sans-serif;
+      margin: 0 0 33px;
+      padding: 47px 0 0; }
+    #tmhtmlcontent_home ul li p {
+      line-height: 30px;
+      margin-bottom: 35px; }
+    #tmhtmlcontent_home ul li .btn-primary1 {
+      height: 54px;
+      padding-top: 18px;
+      text-transform: capitalize; }
+    #tmhtmlcontent_home ul li img {
+      width: 100%; }
+    #tmhtmlcontent_home ul li div {
+      float: right;
+      padding-left: 15px;
+      width: 50%; }
+      #tmhtmlcontent_home ul li div.item-html {
+        padding: 0 15px 0 0;
+        text-align: center; }
+    @media (max-width: 1199px) {
+      #tmhtmlcontent_home ul li h2 {
+        font-size: 40px;
+        line-height: 1.2;
+        margin-bottom: 25px;
+        padding-top: 35px; }
+      #tmhtmlcontent_home ul li p {
+        margin-bottom: 30px;
+        line-height: 25px; } }
+    @media (min-width: 768px) and (max-width: 991px) {
+      #tmhtmlcontent_home ul li h2 {
+        font-size: 32px;
+        margin-bottom: 15px; }
+      #tmhtmlcontent_home ul li p {
+        margin-bottom: 15px;
+        line-height: 25px; } }
+    @media (max-width: 767px) {
+      #tmhtmlcontent_home ul li {
+        text-align: center; }
+        #tmhtmlcontent_home ul li div {
+          float: none;
+          display: inline-block;
+          padding: 0; }
+          #tmhtmlcontent_home ul li div.item-html {
+            display: block;
+            padding: 20px 0 0;
+            width: 100%; } }
+    @media (max-width: 479px) {
+      #tmhtmlcontent_home ul li div {
+        width: 100%; }
+      #tmhtmlcontent_home ul li h2 {
+        font-size: 30px;
+        margin-bottom: 20px; }
+      #tmhtmlcontent_home ul li p {
+        margin-bottom: 20px; } }
+
+#tmhtmlcontent_footer ul {
+  margin-bottom: 0; }
+  #tmhtmlcontent_footer ul li {
+    float: left;
+    padding-top: 64px;
+    width: 100%; }
+    #tmhtmlcontent_footer ul li blockquote {
+      background: url("../../../../img/quote.png") no-repeat;
+      border: none;
+      color: #a579ac;
+      font: 400 14px/25px "Ubuntu", sans-serif;
+      padding: 10px 0 0; }
+      #tmhtmlcontent_footer ul li blockquote p {
+        margin-bottom: 15px; }
+      #tmhtmlcontent_footer ul li blockquote strong {
+        color: #2e1532;
+        font: normal 600 14px/1 "Ubuntu", sans-serif; }
+    @media (max-width: 1199px) {
+      #tmhtmlcontent_footer ul li {
+        padding-top: 40px; } }
+    @media (max-width: 991px) {
+      #tmhtmlcontent_footer ul li {
+        padding-top: 30px; } }
+    @media (max-width: 767px) {
+      #tmhtmlcontent_footer ul li {
+        padding-top: 20px; }
+        #tmhtmlcontent_footer ul li h4 {
+          padding-right: 0; }
+          #tmhtmlcontent_footer ul li h4:after {
+            display: none; }
+        #tmhtmlcontent_footer ul li blockquote {
+          background-position: center top; } }

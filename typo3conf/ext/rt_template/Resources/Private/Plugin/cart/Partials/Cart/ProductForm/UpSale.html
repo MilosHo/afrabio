@@ -1,0 +1,117 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:cartproducts="http://typo3.org/ns/Extcode/CartProducts/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:section name="GridItem">
+    <li class="ajax_block_product col-xs-6 col-sm-6 col-md-4 first-in-line first-item-of-tablet-line first-item-of-mobile-line hovered">
+        <div class="product-container" itemscope="" itemtype="https://schema.org/Product">
+            <div class="left-block">
+                <div class="product-image-container">
+                    <f:if condition="{product.images}">
+                        <cartproducts:link.product product="{product}" settings="{settings}" class="product_img_link">
+                            <f:image src="{product.firstImage.originalResource.originalFile.uid}"
+                                     title="{product.firstImage.originalResource.title}"
+                                     alt="{product.firstImage.originalResource.title}"
+                                     width="{settings.listAction.media.image.size.small.maxWidth}"
+                                     height="{settings.listAction.media.image.size.small.maxHeight}"
+                                     class="replace-2x img-responsive" />
+                        </cartproducts:link.product>
+                    </f:if>
+                    <f:for each="{product.categories}" as="category">
+                        <f:if condition="{category.uid} == 6">
+                            <a class="sale-box" href="#" title="Produkt z ekologického poľnohospodárstva">
+                                <span class="sale-label"><f:image src="typo3conf/ext/rt_template/Resources/Public/Icons/ekologoFarebne.png" width="99px" /></span>
+                            </a>
+                        </f:if>
+                    </f:for>
+                </div>
+            </div>
+            <div class="right-block">
+                <h5 itemprop="name">
+                    <cartproducts:link.product product="{product}" settings="{settings}" class="product-name" >
+                        <span class="grid-name">{product.title}</span>
+                    </cartproducts:link.product>
+                </h5>
+
+                <p class="product-desc" itemprop="description">
+                    <span class="grid-desc"><f:format.html>{product.teaser}</f:format.html></span>
+                </p>
+                <div class="content_price">
+
+                  <span class="price product-price product-price-new">
+                      <f:render partial="Product/Price" arguments="{product: product, settings: settings, currencyTranslationData:currencyTranslationData}"></f:render>
+                  </span>
+                </div>
+                <div class="button-container mt-2">
+
+    <f:form id="product-{product.uid}"
+            class="add-to-cart-form"
+            pageUid="{pid}"
+            extensionName="Cart"
+            pluginName="Cart"
+            controller="Cart\Product"
+            action="add"
+            method="post"
+            pageType="{f:if(condition:'{settings.addToCartByAjax}', then:'{settings.addToCartByAjax}', else:'')}"
+            additionalAttributes="{data-ajax: '{f:if(condition: \'{settings.addToCartByAjax}\', then: \'1\', else: \'0\')}', data-type: 'slot', data-id: '{slot.uid}'}">
+        <input type="hidden" name="tx_cart_cart[productType]" value="CartProducts">
+        <input type="hidden" name="tx_cart_cart[product]" value="{product.uid}">
+
+        <input class="form-control" type="hidden" value="1" name="tx_cart_cart[quantity]">
+        <f:if condition="{product.beVariants}">
+            <cartproducts:form.variantSelect id="be-variants-select" class="form-control" name="tx_cart_cart[beVariants][1]" product="{product}" blank="{f:translate(key: 'tx_cartproducts.variants-select.choose')}"/>
+        </f:if>
+        <f:if condition="{product.feVariants}">
+            <f:for each="{product.feVariants}" as="feVariant">
+                <f:if condition="{feVariant.isRequired}">
+                    <f:then>
+                        <label class="required">{feVariant.title} <em>*</em></label>
+                        <input type="text" name="tx_cart_cart[feVariants][{feVariant.sku}]" required="true">
+                    </f:then>
+                    <f:else>
+                        <label class="required">{feVariant.title}</label>
+                        <input type="text" name="tx_cart_cart[feVariants][{feVariant.sku}]">
+                    </f:else>
+                </f:if>
+            </f:for>
+        </f:if>
+        <a class="ajax_add_to_cart_button btn btn-sm btn-default" title="Pridať do košíka" data-title="{product.title}" data-uid="{product.uid}"  data-price="{product.price}">
+            
+        </a>
+        <input type="submit" class="ajax_add_to_cart_button btn btn-sm btn-default" value=" ">
+
+        <div class="form-message" data-ajax-message-timeout="3000">
+            <div class="form-success" style="display: none;" data-ajax-success-block="">
+                <div class="alert alert-success" data-ajax-success-message=""></div>
+            </div>
+            <div class="form-error" style="display: none;" data-ajax-error-block>
+                <div class="alert alert-warning" data-ajax-error-message></div>
+            </div>
+        </div>
+    </f:form>
+                    
+                    
+                    
+                </div>
+            </div>
+        </div><!-- .product-container> -->
+    </li>
+
+</f:section>
+<f:if condition="{products -> f:count()} > 3">
+    <div class="categoryDescription">
+        <f:format.html>{products.0.category.description}</f:format.html>
+    </div>
+</f:if>    
+<f:for each="{products}" as="product" iteration="iterator">
+    <f:if condition="{iterator.isFirst}">
+        <ul class="product_list grid row">
+    </f:if>
+
+            <f:render section="GridItem" arguments="{_all}"/>
+
+    <f:if condition="{iterator.isLast}">
+        </div>
+    </f:if>
+</f:for>
+</html>

@@ -1,0 +1,70 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:cartproducts="http://typo3.org/ns/Extcode/CartProducts/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<div class="cart_form">
+    <f:form id="product-{product.uid}"
+            class="add-to-cart-form"
+            pageUid="{pid}"
+            extensionName="Cart"
+            pluginName="Cart"
+            controller="Cart\Product"
+            action="add"
+            method="post"
+            pageType="{f:if(condition:'{settings.addToCartByAjax}', then:'{settings.addToCartByAjax}', else:'')}"
+            additionalAttributes="{data-ajax: '{f:if(condition: \'{settings.addToCartByAjax}\', then: \'1\', else: \'0\')}', data-type: 'slot', data-id: '{slot.uid}'}">
+        <input type="hidden" name="tx_cart_cart[productType]" value="CartProducts">
+        <input type="hidden" name="tx_cart_cart[product]" value="{product.uid}">
+        <p id="quantity_wanted_p">
+                      <!-- <div> -->
+                        <input type="text" min="1" name="tx_cart_cart[quantity]" id="quantity_wanted" class="text" value="1" />
+                        <a href="#" data-field-qty="qty" class="btn btn-default button-minus product_quantity_down">
+                          <span>
+                            <i class="fa fa-minus"></i>
+                          </span>
+                        </a>
+                        <a href="#" data-field-qty="qty" class="btn btn-default button-plus product_quantity_up">
+                          <span>
+                            <i class="fa fa-plus"></i>
+                          </span>
+                        </a>
+                      <!-- </div> -->
+                      <span class="clearfix"></span>
+        <div id="add_to_cart_product_page_button">
+                    <p id="add_to_cart" class="buttons_bottom_block no-print">
+                                              <button type="submit" name="<f:translate key='tx_cartproducts.plugin.form.submit' />" class="btn btn-sm btn-default ajax_add_to_cart_product_button">
+                          <span><f:translate key='tx_cartproducts.plugin.form.submit' /></span>
+                        </button>
+                    </p>
+        </div>
+        </p>
+        
+        <f:if condition="{product.beVariants}">
+            <cartproducts:form.variantSelect id="be-variants-select" class="form-control" name="tx_cart_cart[beVariants][1]" product="{product}" blank="{f:translate(key: 'tx_cartproducts.variants-select.choose')}"/>
+        </f:if>
+        <f:if condition="{product.feVariants}">
+            <f:for each="{product.feVariants}" as="feVariant">
+                <f:if condition="{feVariant.isRequired}">
+                    <f:then>
+                        <label class="required">{feVariant.title} <em>*</em></label>
+                        <input type="text" name="tx_cart_cart[feVariants][{feVariant.sku}]" required="true">
+                    </f:then>
+                    <f:else>
+                        <label class="required">{feVariant.title}</label>
+                        <input type="text" name="tx_cart_cart[feVariants][{feVariant.sku}]">
+                    </f:else>
+                </f:if>
+            </f:for>
+        </f:if>
+
+        <div class="form-message" data-ajax-message-timeout="3000">
+            <div class="form-success" style="display: none;" data-ajax-success-block="">
+                <div class="alert alert-success" data-ajax-success-message=""></div>
+            </div>
+            <div class="form-error" style="display: none;" data-ajax-error-block>
+                <div class="alert alert-warning" data-ajax-error-message></div>
+            </div>
+        </div>
+    </f:form>
+</div>
+</html>

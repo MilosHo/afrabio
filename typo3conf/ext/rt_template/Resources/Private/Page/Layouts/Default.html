@@ -1,0 +1,132 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+    <f:spaceless>
+        <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PDG94P3R" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+        <div id="page">
+            <div class="header-container">
+                <header id="header">
+
+                    <div class="wrapper  header1">
+                        <div class="row  static">
+                            <div class="container">
+                            <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 hidden-xs">
+                                <div class="module "><!-- Block permanent links module HEADER -->
+                                        <f:render partial="Navigation/Main" arguments="{_all}" />
+                                    <!-- /Block permanent links module HEADER --></div>
+                                <div class="module ">
+                                    <span class="shop-phone">
+                                        <f:link.email email="afra@afrabio.sk"></f:link.email>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 text-center">
+                                <div id="header_logo">
+                                    <f:link.page pageUid="1"  title="AFRA">
+                                        <f:image class="logo img-responsive" src="/typo3conf/ext/rt_template/Resources/Public/Icons/logo.png" alt="AFRA logo" height="145" />
+                                    </f:link.page>
+                                </div>
+                            </div>
+                            <div class=" col-xs-12 col-sm-4 col-md-4 col-lg-4 block-cart-res text-right text-center">
+                                <div id="languages-block-top" class="languages-block">
+                                    <f:render partial="Navigation/Language" arguments="{_all}" />
+                                </div>
+                                <div class="inline-block clearfix">
+                                      <!-- Load Facebook SDK for JavaScript -->
+                                    <div id="fb-root"></div>
+                                    <a href="https://www.facebook.com/afrabio/" target="_blank" class='social-links'>
+                                        <img src="/typo3conf/ext/rt_template/Resources/Public/Icons/facebook.png" alt="facebook"/>
+                                    </a>
+                                    &nbsp;
+                                    <a href="https://www.instagram.com/afra_bio/" target="_blank" class='social-links'>
+                                        <img src="/typo3conf/ext/rt_template/Resources/Public/Icons/instagram.png" alt="instagram"/>
+                                    </a>
+                                    &nbsp;
+                                    <a href="https://www.tiktok.com/@afraafrabio?_t=web" target="_blank" class='social-links'>
+                                        <img src="/typo3conf/ext/rt_template/Resources/Public/Icons/tik-tok.png" alt="tiktok"/>
+                                    </a>
+                                    &nbsp;
+                                    <a href="https://www.youtube.com/@afrabio" target="_blank" class='social-links'>
+                                        <img src="/typo3conf/ext/rt_template/Resources/Public/Icons/youtube.png" alt="youtube"/>
+                                    </a>
+
+                                    <div class="shopping_cart">
+                                        <f:format.raw>{basket}</f:format.raw>
+                                    </div>
+                                    <div class="login-menu">
+                                        <f:cache.disable>
+                                            <f:security.ifAuthenticated>
+                                                <f:then>
+                                                    <f:link.page pageUid="50" class="nav-link">Moje objednávky</f:link.page>
+                                                    <f:link.page pageUid="51" class="nav-link">Kontaktné údaje</f:link.page>
+                                                    <f:format.raw>{logout}</f:format.raw>
+                                                </f:then>
+                                                <f:else>
+                                                    <f:link.page pageUid="47" class="nav-link">Prihlásenie</f:link.page>
+                                                </f:else>
+                                            </f:security.ifAuthenticated>
+                                        </f:cache.disable>
+                                    </div>
+                                </div>
+                                <div class="slogan">
+                                    
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                        <div class="row  menu-row">
+                            <div class=" col-xs-12 col-sm-12 col-md-12 col-lg-12 block-menu">
+                                <div class="module ">
+                                    <div class="top_menu top-level tmmegamenu_item">
+                                        <div class="menu-title tmmegamenu_item">Menu</div>
+                                        <span class="current"></span>
+
+                                        <ul class="menu clearfix top-level-menu tmmegamenu_item sf-js-enabled sf-arrows ">
+                                            <f:for each="{categorynavigation}" as="category">
+                                                <li class="top-level-menu-li <f:if condition="{category.children}">simple</f:if>">
+                                                <f:link.page pageUid="{category.data.uid}">{category.title}</f:link.page>
+                                                <f:if condition="{category.children}">
+                                                    <ul class="is-simplemenu tmmegamenu_item first-level-menu it_93833936 submenu-container clearfix" >
+                                                        <f:for each="{category.children}" as="subcat">
+                                                            <li class="category"> <f:link.page pageUid="{subcat.data.uid}">{subcat.title}</f:link.page></li>
+                                                        </f:for>
+                                                        
+                                                    </ul>                                                    
+                                                </f:if>
+                                                </li>
+                                            </f:for>
+                                            <f:render partial="Navigation/Main" arguments="{mainnavigation:mainnavigation, mobile:1}" />
+                                        </ul>
+                                    </div>
+                                </div></div></div></div>
+
+                    <div class="wrapper  ">
+                        <div class="row  ">
+                            <div class=" col-xs-12    ">
+                                <div class="module "></div>
+                                <div class="module "></div></div></div></div>
+                </header>
+                <!-- SLIDER HOMOLA -->
+            </div>
+            <div class="body-bg{f:if(condition:theme.navigation.type, then:' body-bg-{theme.navigation.type}')}">
+
+                <f:render partial="Structure/CookieConsent" arguments="{_all}" />
+                <a class="sr-only sr-only-focusable" href="#page-content">
+                    <span>{f:translate(key: 'skiptomaincontent', extensionName: 'bootstrap_package')}</span>
+                </a>
+                <f:render section="Border" optional="true" />
+                <f:comment><f:render partial="Navigation/Breadcrumb" arguments="{_all}" /></f:comment>
+
+                <!--TYPO3SEARCH_begin-->
+                <f:render section="Main" />
+                <!--TYPO3SEARCH_end-->
+                <img src="/typo3conf/ext/rt_template/Resources/Public/Icons/5top.png" class="w-100 d-md-none"/>
+                <f:render partial="Structure/ScrollTop" arguments="{_all}" />
+
+            </div>
+            <div class="footer-margin"></div>
+        </div>
+                <footer id="page-footer" class="bp-page-footer">
+                    <f:render partial="Structure/FooterMeta" arguments="{_all}" />
+                </footer>
+        <div class='left-icons'></div>
+    </f:spaceless>
+</html>

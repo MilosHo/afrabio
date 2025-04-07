@@ -1,0 +1,24 @@
+plugin.tx_felogin_login._LOCAL_LANG.sk {
+    forgot_header_backToLogin = Späť na prihlasovací formulár
+    welcome_header = 
+    welcome_message =  
+    error_header = Chyba pri prihlásení
+    error_message = Zadali ste nesprávne meno alebo heslo.
+    status_header = 
+    status_message = 
+    logout_header = Boli ste odhlásený
+    logout_message = 
+    forgot_header = Zabudli ste heslo?
+    forgot_reset_message = Zadajte vaše prihlsovacie meno, alebo email. Do emailu Vám pošleme link na obnovu hesla.
+    enter_your_data = Meno alebo email
+    forgot_reset_message_emailSent = Odoslali sme Vám email na obnovu hesla. Ak Vám email nebol doručený, tak vaša emailová adresa sa nenachádza v našej databáze.
+    password_recovery_mail_header = Obnova hesla na AFRAbio.sk
+    forgot_validate_reset_password_html (
+<p>Vážený/á %s</p>
+<p>Svoje heslo môžete zmeniť po kliknutí na nasledujúci link</p>
+<p>%s</p>
+<p>Z bezpečnostných dôvodov bude link aktívny len do %s</p>
+<p>Ak to nestihnete, budete musieť opätovne požiadať o vygenerovanie linku na obnovu hesla.</p>
+    )
+    password_recovery_link = Link na obnovu hesla
+}

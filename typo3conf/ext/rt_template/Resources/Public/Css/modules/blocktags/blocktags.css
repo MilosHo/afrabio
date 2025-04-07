@@ -1,0 +1,23 @@
+.tags_block .block_content,
+#tags_blog_block_left .block_content {
+  overflow: hidden; }
+  .tags_block .block_content a,
+  #tags_blog_block_left .block_content a {
+    background: #009846;
+    border: none;
+    border-radius: 3px;
+    color: white;
+    display: inline-block;
+    float: left;
+    font: normal 14px/22px "Ubuntu", sans-serif;
+    height: 30px;
+    margin: 0 10px 10px 0;
+    min-height: 30px;
+    padding: 4px 12px 5px 12px;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+    .tags_block .block_content a:hover,
+    #tags_blog_block_left .block_content a:hover {
+      background: #76aaa8; }

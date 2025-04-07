@@ -1,0 +1,75 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:comment>
+<div class="row top-buffer">
+    <div class="col-sm-6 text-right pull-right">
+        <f:link.action controller="Cart\Cart" action="clear" class="btn btn-danger">
+            <f:translate key="tx_cart.clear_cart"/>
+        </f:link.action>
+    </div>
+</div>
+</f:comment>
+    <script>
+        setTimeout(function(){
+        gtag('event', 'begin_checkout', {
+          value: <f:format.htmlentitiesDecode>{cart.gross}</f:format.htmlentitiesDecode>,
+          currency: 'EUR',
+          items: [
+            <f:for each="{cart.products}" as="product" iteration="iterator">
+                {
+                 item_id: '<f:format.htmlentitiesDecode>{product.productId}</f:format.htmlentitiesDecode>',
+                 item_name: '{product.title}',
+                 price: {product.price},
+                 quantity: {product.quantity}
+                }
+                <f:if condition="{iterator.isLast}"><f:then></f:then><f:else>,</f:else></f:if>
+            </f:for>
+          ]
+        });        
+    
+        ffbq('track', 'InitiateCheckout', {
+            currency: "EUR", 
+            value: <f:format.htmlentitiesDecode>{cart.gross}</f:format.htmlentitiesDecode>
+        });
+        }, 1000);
+    </script>
+<f:form id="form-cart"
+        class="form"
+        name="orderItem"
+        controller="Cart\Cart"
+        action="update"
+        method="post">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="checkout-product-table data-table table stack">
+                    <div class="row first last">
+                        <div colspan="2" class="d-none d-md-block col-md-6">
+                            <f:translate key="tx_cart_domain_model_cart_product.title"/>
+                        </div>
+                        <div class="col-5 col-md-2 text-right">
+                            <f:translate key="tx_cart_domain_model_cart_product.price_pre_unit_net"/>
+                        </div>
+                        <div class="col-2 col-md-1">
+                            <f:translate key="tx_cart_domain_model_cart_product.count"/>
+                        </div>
+                        <div class="col-3 col-md-2 text-right">
+                            <f:translate key="tx_cart_domain_model_cart_product.price_subtotal"/>
+                        </div>
+                        <div class="col-1 col-md-1">
+                            &nbsp;
+                        </div>
+                    </div>
+                    <f:render partial="Cart/ProductForm/ProductList" arguments="{cart:cart, products:cart.products}"/>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 text-right pull-right">
+            <f:form.submit class="btn btn-default btn-green"
+                           value="{f:translate(key: 'tx_cart.update_cart', default: '[submit update]')}"/>
+        </div>
+        <div class="col-sm-6 font-weight-bold pt-1">Pri objednávke nad 50&euro; poštovné zdarma.</div>
+    </div>
+</f:form>
+</html>

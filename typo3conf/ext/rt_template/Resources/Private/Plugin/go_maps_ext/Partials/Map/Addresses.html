@@ -1,0 +1,16 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers" data-namespace-typo3-fluid="true">
+<f:variable name="town"></f:variable>    
+<ul class="gme-addresses">
+	<f:for each="{addresses}" as="address">
+            <f:if condition="{town} != {address.city}">
+                <f:variable name="town">{address.city}</f:variable>
+                <li class="row col-12"><h2>{town}</h2></li>
+            </f:if>
+		<li id="gme-address{address.uid}" class="col-md-6">
+			
+                            <h3>{address.title}</h3>
+                            <p>{address.street}, {address.city}</p>
+		</li>
+	</f:for>
+</ul>
+</html>

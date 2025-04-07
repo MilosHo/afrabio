@@ -1,0 +1,15 @@
+services:
+  _defaults:
+    autowire: true
+    autoconfigure: true
+    public: true
+
+  Runit\RtTemplate\:
+    resource: '..\Classes\*'
+  Runit\RtTemplate\EventListener\FinishEvent:
+    tags:
+      - name: event.listener
+        method: dispatchEvent
+        identifier: 'finishEvent'
+        event: Extcode\Cart\Event\Order\FinishEvent
+  

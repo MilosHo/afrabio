@@ -1,0 +1,49 @@
+plugin {
+    tx_gomapsext {
+        view {
+            partialRootPaths.20 = typo3conf/ext/rt_template/Resources/Private/Plugin/go_maps_ext/Partials/
+        }
+        _LOCAL_LANG.default {
+                tx_gomapsext_partials_map_assign.infoWindowLinkText = Vyhľadať trasu
+        }
+    }
+
+    tx_seo {
+      config {
+        xmlSitemap {
+          sitemaps {
+            pages {
+              config {
+                excludedDoktypes = 137, 138
+                additionalWhere = AND (no_index = 0 OR no_follow = 0)
+              }
+            }
+            product {
+                provider = TYPO3\CMS\Seo\XmlSitemap\RecordsXmlSitemapDataProvider
+                config {
+                    table = tx_cartproducts_domain_model_product_product
+                    additionalWhere =
+                    sortField = sorting
+                    lastModifiedField = tstamp
+                    pid = 9
+                    url {
+                        pageId = 5
+                        fieldToParameterMap {
+                            uid = tx_cartproducts_products[product]
+                        }
+                        useCacheHash = 1
+                    }
+                }
+            }
+
+          }
+        }
+      }
+    }
+
+    tx_googlereviews_pi1 {
+        view {
+            partialRootPaths.20 = typo3conf/ext/rt_template/Resources/Private/Plugin/google_reviews/Partials/
+        }
+    }
+}

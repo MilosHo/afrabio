@@ -1,0 +1,75 @@
+#header-login {
+  position: relative;
+  float: right; }
+  #header-login .header_user_info {
+    color: #2e1532;
+    cursor: pointer;
+    display: block;
+    position: relative; }
+    #header-login .header_user_info.current a {
+      color: white; }
+      #header-login .header_user_info.current a:after {
+        font-family: "FontAwesome";
+        content: "\f0d7";
+        display: inline-block;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 18px;
+        color: #a579ac;
+        padding-left: 12px;
+        font-weight: normal; }
+    #header-login .header_user_info.current:hover, #header-login .header_user_info.current:focus, #header-login .header_user_info.current.active {
+      background: #1d0d20; }
+    #header-login .header_user_info.current.active a:after {
+      content: "\f0d8"; }
+  #header-login .logout {
+    overflow: hidden;
+    padding-top: 10px;
+    margin: 0; }
+
+#header-login-content {
+  background: white;
+  border-radius: 2px;
+  color: #a579ac;
+  display: none;
+  overflow: hidden;
+  right: 0;
+  top: 100%;
+  padding: 20px 30px;
+  position: absolute;
+  width: 370px;
+  z-index: 2;
+  -moz-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 0px 11px 5px rgba(0, 0, 0, 0.3);
+  width: 270px; }
+  #header-login-content li {
+    padding: 5px; }
+  @media (max-width: 479px) {
+    #header-login-content {
+      padding: 10px 15px;
+      width: 290px; } }
+  #header-login-content h4 {
+    color: #2e1532;
+    font: 600 18px/1 "Ubuntu", sans-serif;
+    margin: 10px 0;
+    text-align: left;
+    text-transform: capitalize; }
+    @media (max-width: 767px) {
+      #header-login-content h4:after {
+        display: none; } }
+  @media (max-width: 479px) {
+    #header-login-content {
+      padding: 10px 15px 15px;
+      width: 270px; } }
+  #header-login-content .alert li {
+    padding: 0; }
+  #header-login-content label {
+    color: white; }
+  #header-login-content a:not(.btn):hover, #header-login-content a:focus:not(.btn) {
+    color: white; }
+  #header-login-content li ul li a i {
+    display: none; }
+
+#create_header_account_error {
+  padding: 8px; }

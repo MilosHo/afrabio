@@ -1,0 +1,11 @@
+########################
+#### BACKENDLAYOUTS ####
+########################
+#mod.web_layout.BackendLayouts >
+
+<INCLUDE_TYPOSCRIPT: source="DIR:EXT:rt_template/Configuration/TsConfig/BackendLayout" extensions="tsconfig">
+
+tx_news.templateLayouts {
+                1 = Default
+                2 = Homepage
+}

@@ -1,0 +1,20 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:form id="form-coupon" class="form"
+        name="couponItem"
+        controller="Cart\Coupon"
+        action="add"
+        method="post">
+    <div class="row top-buffer">
+        <div class="col-sm-12 col-md-9 col-lg-9">
+            <f:form.textfield class="form-control" type="text" value="" name="couponCode" id="couponCode"/>
+            <f:form.hidden name="email" id="couponEmail"/>
+        </div>
+        <div class="col-sm-12 col-md-3 col-lg-3">
+            <f:form.submit class="btn btn-default btn-green"
+                           value="{f:translate(key: 'tx_cart.add_coupon', default: '[add coupon]')}"/>
+        </div>
+    </div>
+</f:form>
+</html>

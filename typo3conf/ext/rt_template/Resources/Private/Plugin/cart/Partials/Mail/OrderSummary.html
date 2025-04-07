@@ -1,0 +1,54 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<table width="600" cellspacing="0" border="0" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+    <tr>
+        <td height="10" style="font-size:10px; line-height:10px;">   </td><!-- Spacer -->
+    </tr>
+    <tr>
+        <td width="600" height="34" valign="center" style="background-color:#009745; color:#fff; padding: 0 10px; margin: 0; font-family: Arial, Helvetica, sans-serif; font-size: 12px;">
+            <b><f:translate key="tx_cart.mail.order_summary" /></b>
+        </td>
+    </tr>
+    <tr>
+        <td height="10" style="font-size:10px; line-height:10px;">   </td><!-- Spacer -->
+    </tr>
+</table>
+
+<table cellspacing="0" border="0">
+    <tbody>
+    <f:if condition="{orderItem.orderNumber}">
+        <tr>
+            <td colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;"><b><f:translate key="tx_cart_domain_model_order_item.order_number" /></b></td>
+            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">: {orderItem.orderNumber}</td>
+        </tr>
+    </f:if>
+    <tr>
+        <td colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;"><b><f:translate key="tx_cart_domain_model_order_item.order_date" /></b></td>
+        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">: <f:format.date format="d.m.Y" date="{orderItem.orderDate}" /></td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px; vertical-align: top; "><b><f:translate key="tx_cart.mail.payment_method" /></b></td>
+        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">: 
+            {orderItem.payment.name}
+            <f:if condition="{orderItem.payment.serviceId} == 4">
+                <br/>&nbsp;&nbsp;Potvrdenie o úhrade nám pošlite na <a href="mailto:afra@afrabio.sk">afra@afrabio.sk</a>
+            </f:if>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;"><b><f:translate key="tx_cart.mail.shipping_method" /></b></td>
+        <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">: {orderItem.shipping.name} <f:if condition="{orderItem.shipping.packetaText}">, {orderItem.shipping.packetaText}</f:if></td>
+    </tr>
+    <f:if condition="{orderItem.comment}">
+        <tr>
+            <td colspan="2" style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;"><b><f:translate key="tx_cart_domain_model_order_item.comment" /></b></td>
+            <td style="font-family: Arial, Helvetica, sans-serif; font-size: 12px;">: {orderItem.comment}</td>
+        </tr>
+    </f:if>
+    <tr>
+        <td height="10" style="font-size:10px; line-height:10px;">   </td><!-- Spacer -->
+    </tr>
+    </tbody>
+</table>
+</html>

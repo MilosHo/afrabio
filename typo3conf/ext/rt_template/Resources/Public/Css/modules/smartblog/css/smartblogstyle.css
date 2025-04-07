@@ -1,0 +1,356 @@
+.sdsarticleCat .title_block:after, #sdsblogArticle .title_block:after, #articleComments .title_block:after {
+  display: none; }
+
+/****************************** Blog blocks styles ********************************/
+#latestComments ul li.last_item, #blogPopular ul li.last_item, #recent_article_smart_blog_block_left ul li.last_item {
+  border: none;
+  margin-bottom: 0;
+  padding-bottom: 0; }
+
+#blogPopular .info, #recent_article_smart_blog_block_left .info {
+  display: block;
+  font-style: italic; }
+
+#latestComments .products-block-image {
+  border: none; }
+#latestComments .block_content ul li {
+  background: url("../../../../img/quote.png") no-repeat;
+  padding-top: 15px; }
+  #latestComments .block_content ul li a {
+    font: italic 400 16px/25px "Ubuntu", sans-serif;
+    display: inline-block;
+    margin-bottom: 15px;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+  #latestComments .block_content ul li strong {
+    color: #2e1532;
+    display: block;
+    position: relative; }
+    #latestComments .block_content ul li strong:before {
+      content: '- '; }
+
+/*************************** end Blog blocks styles *******************************/
+/*************************** articles listing styles ******************************/
+.title_block_exclusive {
+  color: #2e1532;
+  font: 400 18px/24px "Ubuntu", sans-serif;
+  margin: 0 0 20px 0;
+  padding: 0;
+  padding: 0; }
+  .title_block_exclusive a {
+    color: #2e1532;
+    -moz-transition: 0.3s;
+    -o-transition: 0.3s;
+    -webkit-transition: 0.3s;
+    transition: 0.3s; }
+    .title_block_exclusive a:hover {
+      color: #009846; }
+
+#sdsblogCategory {
+  margin-bottom: 30px; }
+  #sdsblogCategory .imageFeatured {
+    float: left;
+    margin: 0 20px 10px 0; }
+
+#smartblogcat {
+  margin-bottom: 0; }
+
+.sdsarticleCat {
+  margin-bottom: 30px; }
+  .sdsarticleCat .articleContent .post-image {
+    display: block;
+    margin-bottom: 30px; }
+    .sdsarticleCat .articleContent .post-image img {
+      width: 100%; }
+  .sdsarticleCat .articleContent .sdsarticle-des {
+    margin-bottom: 30px; }
+
+.articleHeader {
+  color: #009846;
+  overflow: hidden;
+  margin-bottom: 15px; }
+  .articleHeader .postInfo > span {
+    display: inline-block;
+    padding-right: 8px; }
+    .articleHeader .postInfo > span:after {
+      content: '|';
+      padding-left: 8px; }
+    .articleHeader .postInfo > span:last-child:after {
+      display: none; }
+  .articleHeader .postInfo a {
+    color: #009846; }
+    .articleHeader .postInfo a:hover {
+      color: #2e1532; }
+
+a.read-more {
+  text-decoration: underline; }
+  a.read-more:hover {
+    text-decoration: none; }
+
+.post-count {
+  float: left;
+  padding: 5px 0 0 0; }
+
+/*********************** end articles listing styles ******************************/
+/************************** article info styles ***********************************/
+#sdsblogArticle {
+  margin-bottom: 60px; }
+  #sdsblogArticle .post-image {
+    display: block;
+    margin-bottom: 30px; }
+    #sdsblogArticle .post-image img {
+      width: 100%; }
+  #sdsblogArticle .sdsarticle-des {
+    margin-bottom: 30px; }
+  #sdsblogArticle .sdstags-update {
+    margin-bottom: 30px; }
+  #sdsblogArticle .block-addthis {
+    margin-bottom: 30px; }
+  @media (max-width: 479px) {
+    #sdsblogArticle .addthis_default_style .addthis_counter {
+      clear: left; }
+    #sdsblogArticle .at-share-tbx-element a.at300b, #sdsblogArticle .at-share-tbx-element a.at300b {
+      clear: left;
+      display: block;
+      margin-bottom: 10px;
+      width: auto; } }
+
+/************************ end of article info styles ******************************/
+#sdsblogArticle .attention img {
+  margin: 0 10px; }
+
+/*************************************** Blog comments *****************************/
+#articleComments h2 {
+  background: url("../../../../img/icon.png") center top no-repeat;
+  color: #2e1532;
+  font: 400 37px/1.5 "Ubuntu", sans-serif;
+  margin: 0 0 40px;
+  padding: 60px 0 0;
+  text-align: center;
+  text-transform: none; }
+
+#comments #commentTitle {
+  display: none; }
+
+#comments img.avatar {
+  float: left;
+  margin-right: 15px;
+  margin-bottom: 5px;
+  border: 1px solid #ebebeb; }
+  @media (max-width: 479px) {
+    #comments img.avatar {
+      float: none;
+      margin: 0 0 15px; } }
+#comments li li .well {
+  margin-top: 20px; }
+
+#respond {
+  background: white; }
+
+#respond h4 {
+  background: url("../../../../img/icon.png") center top no-repeat;
+  color: #2e1532;
+  font: 400 37px/1.5 "Ubuntu", sans-serif;
+  margin: 0 0 40px;
+  padding: 60px 0 30px;
+  position: relative;
+  text-align: center;
+  text-transform: none; }
+  #respond h4:after {
+    display: none; }
+  #respond h4 small {
+    font: normal 14px/22px "Ubuntu", sans-serif;
+    position: absolute;
+    right: 0;
+    bottom: 0; }
+    #respond h4 small a {
+      text-decoration: underline; }
+      #respond h4 small a:hover {
+        text-decoration: none; }
+
+#respond #commentInput input.form-control {
+  max-width: 590px; }
+#respond #commentInput .form-control {
+  background: #f1f1f1;
+  border-radius: 25px;
+  color: #a579ac;
+  border: none;
+  display: block;
+  margin-bottom: 24px;
+  padding: 8px 15px;
+  font: 400 16px/22px "Ubuntu", sans-serif;
+  -moz-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+  @media (max-width: 991px) {
+    #respond #commentInput .form-control {
+      margin-bottom: 5px; } }
+#respond #commentInput .btn-primary1:after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 0 0;
+  border-color: white transparent transparent transparent;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  -webkit-transition: 0.5s;
+  transition: 0.5s; }
+#respond #commentInput .btn-primary1:hover, #respond #commentInput .btn-primary1:active:focus, #respond #commentInput .btn-primary1:active, #respond #commentInput .btn-primary1:focus {
+  background: white;
+  border-color: #009846;
+  color: #009846; }
+  #respond #commentInput .btn-primary1:hover:after, #respond #commentInput .btn-primary1:active:focus:after, #respond #commentInput .btn-primary1:active:after, #respond #commentInput .btn-primary1:focus:after {
+    border-width: 340px 380px 0 0; }
+
+#respond #replyTitle {
+  display: none; }
+
+#respond table {
+  width: 100%; }
+
+#respond .smartblogcaptcha {
+  width: 100px; }
+
+#respond td {
+  padding: 3px 5px; }
+  @media (max-width: 991px) {
+    #respond td {
+      display: block;
+      padding: 0 0 5px; } }
+
+#respond .note {
+  color: #888888;
+  display: block;
+  font-size: 10px; }
+
+#respond td:first-child {
+  vertical-align: top;
+  padding-top: 18px; }
+  #respond td:first-child b {
+    line-height: 18px; }
+  #respond td:first-child .note {
+    line-height: 10px; }
+
+#respond .text-right {
+  padding: 10px 5px 0; }
+
+#sdssearch_block_top {
+  padding-top: 0; }
+  #sdssearch_block_top #tmsearchbox, #sdssearch_block_top #searchbox {
+    border: none;
+    border-radius: 2px;
+    position: relative;
+    width: 100%; }
+    #sdssearch_block_top #tmsearchbox .btn.button-search, #sdssearch_block_top #searchbox .btn.button-search {
+      background: none;
+      border: none;
+      border-radius: 25px;
+      color: #009846;
+      display: block;
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: 100%;
+      text-align: center;
+      width: 50px;
+      -moz-transition: 0.3s;
+      -o-transition: 0.3s;
+      -webkit-transition: 0.3s;
+      transition: 0.3s; }
+      #sdssearch_block_top #tmsearchbox .btn.button-search span, #sdssearch_block_top #searchbox .btn.button-search span {
+        display: none; }
+      #sdssearch_block_top #tmsearchbox .btn.button-search:before, #sdssearch_block_top #searchbox .btn.button-search:before {
+        content: "\e032";
+        display: block;
+        font-family: "fl-outicons";
+        font-size: 25px;
+        line-height: 1;
+        text-align: center;
+        width: 100%; }
+      #sdssearch_block_top #tmsearchbox .btn.button-search:hover, #sdssearch_block_top #searchbox .btn.button-search:hover {
+        color: #2e1532; }
+    #sdssearch_block_top #tmsearchbox #tm_search_query, #sdssearch_block_top #tmsearchbox #search_query_top, #sdssearch_block_top #searchbox #tm_search_query, #sdssearch_block_top #searchbox #search_query_top {
+      background: #f1f1f1;
+      border-radius: 25px;
+      color: #a579ac;
+      border: none;
+      display: block;
+      padding: 5px 60px 5px 15px;
+      height: 50px;
+      font: 400 16px/22px "Ubuntu", sans-serif;
+      -moz-transition: all 0.3s ease;
+      -o-transition: all 0.3s ease;
+      -webkit-transition: all 0.3s ease;
+      transition: all 0.3s ease; }
+
+ul.commentList ul {
+  padding-left: 70px; }
+  @media (max-width: 1199px) {
+    ul.commentList ul {
+      padding-left: 15px; } }
+
+.commentList .well {
+  background: #f3f3f3;
+  border: none;
+  margin-bottom: 25px;
+  margin-top: 25px; }
+  @media (max-width: 767px) {
+    .commentList .well {
+      position: relative;
+      padding-bottom: 50px; } }
+.commentList .created, .commentList .name {
+  color: #2e1532; }
+.commentList p {
+  line-height: 30px;
+  margin: 0; }
+.commentList .comment-reply-link {
+  color: #009846;
+  cursor: pointer;
+  font: 400 15px/20px "Ubuntu", sans-serif; }
+  .commentList .comment-reply-link:hover, .commentList .comment-reply-link:active, .commentList .comment-reply-link:focus {
+    color: #2e1532; }
+@media (max-width: 767px) {
+  .commentList .pull-right {
+    position: absolute;
+    right: 5px;
+    bottom: 5px; }
+    .commentList .pull-right .comment-reply-link.btn {
+      font-size: 11px;
+      line-height: 14px;
+      padding: 5px 10px; } }
+
+#articleRelated {
+  margin-bottom: 15px; }
+  #articleRelated li {
+    padding-bottom: 15px; }
+    #articleRelated li .products-block-image {
+      display: block;
+      padding: 9px;
+      position: relative; }
+    @media only screen and (min-width: 992px) {
+      #articleRelated li.first-in-line {
+        clear: left; } }
+    @media only screen and (min-width: 768px) and (max-width: 991px) {
+      #articleRelated li.first-item-of-tablet-line {
+        clear: left; } }
+    @media only screen and (min-width: 480px) and (max-width: 767px) {
+      #articleRelated li {
+        width: 50%;
+        float: left;
+        text-align: center; }
+        #articleRelated li.first-item-of-mobile-line {
+          clear: left; } }
+    @media only screen and (max-width: 767px) {
+      #articleRelated li .img-responsive {
+        width: 100%; } }
+  #articleRelated .products-block-image {
+    margin-bottom: 10px;
+    display: block; }

@@ -1,0 +1,70 @@
+/* -------*--------------------------------------------------------------------------------------------------------
+                     Social Sharing 
+------------------------------------------------------------------------------------------------------------------- */
+.btn.btn-facebook,
+.btn.btn-twitter,
+.btn.btn-google-plus,
+.btn.btn-pinterest {
+  border: none;
+  margin-bottom: 3px;
+  padding-left: 0;
+  padding-right: 0;
+  height: 40px;
+  width: 40px; }
+  .btn.btn-facebook span,
+  .btn.btn-twitter span,
+  .btn.btn-google-plus span,
+  .btn.btn-pinterest span {
+    display: none; }
+  .btn.btn-facebook i,
+  .btn.btn-twitter i,
+  .btn.btn-google-plus i,
+  .btn.btn-pinterest i {
+    display: none; }
+
+.btn.btn-facebook {
+  color: white;
+  background-color: #435f9f; }
+  .btn.btn-facebook:before {
+    color: white; }
+  .btn.btn-facebook:hover, .btn.btn-facebook:focus {
+    border-color: #435f9f;
+    background: #0a0a0a; }
+    .btn.btn-facebook:hover:before, .btn.btn-facebook:focus:before {
+      color: #435f9f; }
+
+.btn.btn-twitter {
+  color: white;
+  background-color: #00aaf0; }
+  .btn.btn-twitter:before {
+    color: white; }
+  .btn.btn-twitter:hover, .btn.btn-twitter:focus {
+    border-color: #00aaf0;
+    background: #0a0a0a; }
+    .btn.btn-twitter:hover:before, .btn.btn-twitter:focus:before {
+      color: #00aaf0; }
+
+.btn.btn-google-plus {
+  color: white;
+  background-color: #e04b34; }
+  .btn.btn-google-plus:before {
+    color: white; }
+  .btn.btn-google-plus:hover, .btn.btn-google-plus:focus {
+    border-color: #e04b34;
+    background: #0a0a0a; }
+    .btn.btn-google-plus:hover:before, .btn.btn-google-plus:focus:before {
+      color: #e04b34; }
+
+.btn.btn-pinterest {
+  color: white;
+  background-color: #ce1f21; }
+  .btn.btn-pinterest:before {
+    color: white; }
+  .btn.btn-pinterest:hover, .btn.btn-pinterest:focus {
+    border-color: #ce1f21;
+    background: #0a0a0a; }
+    .btn.btn-pinterest:hover:before, .btn.btn-pinterest:focus:before {
+      color: #ce1f21; }
+
+.socialsharing_product button {
+  margin-bottom: 3px; }

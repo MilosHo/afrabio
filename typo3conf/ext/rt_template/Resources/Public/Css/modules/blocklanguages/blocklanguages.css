@@ -1,0 +1,40 @@
+#languages-block-top {
+  float: left;
+  position: relative;
+  margin-bottom: 6px; }
+  #languages-block-top ul {
+    margin-bottom: 0; }
+    #languages-block-top ul li {
+      color: white;
+      display: inline-block;
+      font: 700 14px/1.5 "Ubuntu", sans-serif;
+      text-transform: uppercase; }
+      #languages-block-top ul li a, #languages-block-top ul li span {
+        color: #2e1532;
+        -moz-transition: 0.3s;
+        -o-transition: 0.3s;
+        -webkit-transition: 0.3s;
+        transition: 0.3s; }
+      #languages-block-top ul li + li {
+        margin-left: 23px; }
+    @media (max-width: 1199px) {
+      #languages-block-top ul li + li {
+        margin-left: 16px; } }
+    @media (max-width: 767px) {
+      #languages-block-top ul {
+        display: flex;
+        text-align: center; }
+        #languages-block-top ul li {
+          color: #2e1532;
+          display: inline-block;
+          float: none;
+          font-size: 20px; }
+          #languages-block-top ul li a, #languages-block-top ul li span {
+            color: #2e1532; } }
+    #languages-block-top ul li.selected, #languages-block-top ul li.selected span, #languages-block-top ul li.selected a, #languages-block-top ul li a:hover span, #languages-block-top ul li a:focus span {
+      color: #009846; }
+  @media (max-width: 767px) {
+    #languages-block-top {
+      float: none;
+      margin: 0;
+      padding: 20px 10px 25px; } }

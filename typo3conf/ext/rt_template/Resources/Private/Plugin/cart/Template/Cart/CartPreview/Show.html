@@ -1,0 +1,132 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+<f:layout name="Plain"/>
+
+<f:section name="main">
+    <span id="cart-preview" class="tx-cart cart-preview">
+        <f:link.page pageUid="{settings.cart.pid}"   title="{f:translate(key: 'tx_cart.plugin.mini_cart.go_to_checkout')}" rel="nofollow">
+            <b>Cart</b>
+            <span class="ajax_cart_quantity unvisible cart-preview-count">{cart.count}</span>
+            <span class="ajax_cart_product_txt unvisible"><f:translate key="tx_cart.plugin.mini_cart.products_in_cart" /></span>
+            <span class="ajax_cart_product_txt_s unvisible"><f:translate key="tx_cart.plugin.mini_cart.products_in_cart" /></span>
+            <span class="ajax_cart_total unvisible"></span>
+            <span class="ajax_cart_no_product cart-preview-count">{cart.count}</span>
+        </f:link.page>
+    </span>
+    <f:comment>
+    
+                                    <div class="cart_block block">
+                                        <div class="block_content">
+                                            <h4>Shopping Cart</h4>
+                                            <!-- block list of products -->
+                                            <div class="cart_block_list">
+                                                <p class="cart_block_no_products">
+                                                    No products
+                                                </p>
+                                                <div class="cart-prices">
+                                                    <div class="cart-prices-line first-line  unvisible">
+                <span class="cart_block_shipping_cost ajax_cart_shipping_cost">
+                                      To be determined                                  </span>
+                <span>
+                  Shipping
+                </span>
+                                                    </div>
+                                                    <div class="cart-prices-line last-line">
+                                                        <span class="price cart_block_total ajax_block_cart_total">$0.00</span>
+                                                        <span>Total</span>
+                                                    </div>
+                                                </div>
+                                                <p class="cart-buttons">
+                                                    <a id="button_order_cart" class="btn btn-default btn-sm icon-right btn-primary1" href="https://ld-prestashop.template-help.com/prestashop_63336/index.php?controller=order-opc&amp;live_configurator&amp;theme=&amp;header_layout=66&amp;top_layout=72&amp;home_layout=&amp;footer_layout=&amp;product_footer_layout=" title="Check out" rel="nofollow">
+                <span>
+                  Check out
+                </span>
+                                                    </a>
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div><!-- .cart_block -->
+    </f:comment>
+                                    
+                                    <f:comment>
+                                        <div id="layer_cart">
+                                        <div class="clearfix">
+                                            <div class="layer_cart_product col-xs-12 col-md-6">
+                                                <span class="cross" title="Close window"></span>
+                                                <span class="title">
+                                                    <i class="check"></i>
+                                                    Product successfully added to your shopping cart
+                                                </span>
+                                                <div class="product-image-container layer_cart_img">
+                                                </div>
+                                                <div class="layer_cart_product_info">
+                                                    <span id="layer_cart_product_title" class="product-name"></span>
+                                                    <span id="layer_cart_product_attributes"></span>
+                                                    <div>
+                                                        <strong class="dark">Quantity</strong>
+                                                        <span id="layer_cart_product_quantity"></span>
+                                                    </div>
+                                                    <div>
+                                                        <strong class="dark">Total</strong>
+                                                        <span id="layer_cart_product_price"></span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="layer_cart_cart col-xs-12 col-md-6">
+                                                <span class="title">
+                                                    <!-- Plural Case [both cases are needed because page may be updated in Javascript] -->
+                                                    <span class="ajax_cart_product_txt_s  unvisible">
+                                                        There are <span class="ajax_cart_quantity">0</span> items in your cart.
+                                                    </span>
+                                                    <!-- Singular Case [both cases are needed because page may be updated in Javascript] -->
+                                                    <span class="ajax_cart_product_txt ">
+                                                        There is 1 item in your cart.
+                                                    </span>
+                                                </span>
+
+                                                <div class="layer_cart_row">
+                                                    <strong class="dark">
+                                                        Total products
+                                                    </strong>
+                                                    <span class="ajax_block_products_total">
+                                                    </span>
+                                                </div>
+
+                                                <div class="layer_cart_row">
+                                                    <strong class="dark unvisible">
+                                                        Total shipping&nbsp;          </strong>
+                                                    <span class="ajax_cart_shipping_cost unvisible">
+                                                        To be determined                      </span>
+                                                </div>
+                                                <div class="layer_cart_row">
+                                                    <strong class="dark">
+                                                        Total
+                                                    </strong>
+                                                    <span class="ajax_block_cart_total">
+                                                    </span>
+                                                </div>
+                                                <div class="button-container">
+                                                    <span class="continue btn btn-default btn-md btn-primary1" title="Continue shopping">
+                                                        <span>
+                                                            Continue shopping
+                                                        </span>
+                                                    </span>
+                                                    <a class="btn btn-default btn-md btn-primary1" href="" title="Proceed to checkout" rel="nofollow">
+                                                        <span>
+                                                            Proceed to checkout
+                                                        </span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="crossseling"></div>
+                                    </div> <!-- #layer_cart -->
+                                    
+                                    
+                                    <div class="layer_cart_overlay"></div>
+                                    
+                                    </f:comment>
+    
+</f:section>
+</html>

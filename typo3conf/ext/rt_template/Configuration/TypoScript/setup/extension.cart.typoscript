@@ -1,0 +1,254 @@
+plugin {
+    tx_cart {
+        view {
+                templateRootPaths.20 = typo3conf/ext/rt_template/Resources/Private/Plugin/cart/Template/
+                templateRootPaths.10 = typo3conf/ext/rt_template/Resources/Private/Plugin/sf_register/Template/
+                partialRootPaths.1 = typo3conf/ext/rt_template/Resources/Private/Plugin/cart/Partials/
+                layoutRootPaths.10 = typo3conf/ext/rt_template/Resources/Private/Plugin/sf_register/Layouts/
+        }
+
+        settings {
+            cart {
+                pid = 11
+                isNetCart = 0
+            }
+            order {
+                pid = 13
+            }
+
+            addToCartByAjax = 1
+            currencies {
+                1 {
+                        translation = 1
+                }
+            }
+
+            showCartAction {
+                showPartials {
+                    couponForm = false
+
+                    # if setting shippingAddressForm to false please disable all validations too
+                    shippingAddressForm = true
+
+                    shippingMethodForm = true
+                    paymentMethodForm = true
+                }
+
+                summary {
+                    fields {
+                        cart.net = true
+                        cart.taxes = true
+                        discount.gross = true
+                        service.gross = true
+                        total.gross = true
+                    }
+                }
+            }
+
+            validation {
+                orderItem {
+                    fields >
+                }
+                billingAddress.fields {
+                    salutation.validator = Empty
+                    fax.validator = Empty
+                    phone.validator = NotEmpty
+                    title.validator = Empty
+                }
+                shippingAddress.fields {
+                    salutation.validator = Empty
+                    fax.validator = Empty
+                    title.validator = Empty
+                }
+            }
+            allowedCountries >
+            allowedCountries {
+                sk = Slovensko
+                eu = Európska únia
+            }
+            defaultCountry = sk
+        }
+
+        #shippings >
+        shippings {
+            sk {
+                preset = 1
+                options {
+                        1 {
+                                title = Kuriér (Packeta)
+                                #extra = 4.00
+                                taxClassId = 1
+                                status = open
+                                extra = by_price
+                                extra {
+                                    1 {
+                                        value = 0.00
+                                        extra = 5.00
+                                    }
+                                    2 {
+                                        value = 50.00
+                                        extra = 0.00
+                                    }
+
+                                }
+                        }
+                        2 {
+                                title = Balíkobox (Packeta)
+                                #extra = 4.00
+                                taxClassId = 1
+                                status = open
+                                extra = by_price
+                                extra {
+                                    1 {
+                                        value = 0.00
+                                        extra = 4.00
+                                    }
+                                    2 {
+                                        value = 50.00
+                                        extra = 0.00
+                                    }
+
+                                }
+                        }
+                        3 {
+                                title = Osobný odber v predajni
+                                extra = 0.00
+                                taxClassId = 1
+                                status = open
+                        }
+                }
+            }
+            eu {
+                preset = 1
+                options {
+                        1 {
+                                title = Packeta
+                                extra = 25.00
+                                taxClassId = 1
+                                status = open
+                        }
+                }
+            }
+        }
+
+        payments >
+        payments {
+            sk {
+                preset = 1
+                options {
+                        1 {
+                                title = Dobierka
+                                #extra = 1.00
+                                taxClassId = 1
+                                status = open
+                                extra = by_price
+                                extra {
+                                    1 {
+                                        value = 0.00
+                                        extra = 1.00
+                                    }
+                                    2 {
+                                        value = 50.00
+                                        extra = 0.00
+                                    }
+
+                                }
+                        }
+#                        2 {
+#                                title = Platba kartou
+#                                extra = 0.00
+#                                taxClassId = 1
+#                                status = open
+#                        }
+                        4 {
+                                title = Platba na účet SK56 0200 0000 0049 8331 8455
+                                extra = 0.00
+                                taxClassId = 1
+                                status = open
+                        }
+                }
+            }
+            eu {
+                preset = 2
+                options {
+                        2 {
+                                title = Platba kartou
+                                extra = 0.00
+                                taxClassId = 1
+                                status = open
+                        }
+                }
+            }
+        }
+
+
+        mail {
+            buyer {
+                attachments {
+                    #1 = EXT:theme_cart/Resources/Public/Files/AGB.pdf
+                }
+            }
+        }
+        _LOCAL_LANG.sk {
+            tx_cart.success.stock_handling.add.one = Produkt bol pridaný do košíka
+            tx_cart.success.stock_handling.add.more = Produkty boli pridané do košíka
+
+            tx_cart.controller.order.action.show_cart.block-header.order_overview = Skontrolovať a objednať
+            tx_cart.success.stock_handling.add.one = Produkt bol pridaný do košíka
+            tx_cart.success.stock_handling.add.more = %s produktov bolo pridaných do košíka
+            tx_cart.plugin.mini_cart.empty_cart = Košík je prázdny
+            tx_cart.plugin.mini_cart.go_to_checkout = Do košíka
+            tx_cart.plugin.mini_cart.products_in_cart = Produktov v košíku
+            
+            tx_cart_domain_model_cart.billing_address = Fakturačná adresa
+            tx_cart_domain_model_cart.shipping_address = Doručovacia adresa
+        }
+    }
+    tx_cartproducts {
+        view {
+                templateRootPaths.1 = typo3conf/ext/rt_template/Resources/Private/Plugin/cart_products/Template/
+                partialRootPaths.1 = typo3conf/ext/rt_template/Resources/Private/Plugin/cart_products/Partials/
+        }
+        _LOCAL_LANG.sk {
+            tx_cartproducts.plugin.form.submit = Pridať do košíka
+            tx_cartproducts.history_back = Späť
+        }
+    }
+}
+
+[traverse(request.getQueryParams(), 'tx_cart_cart/shippingId') == 3]
+plugin.tx_cart.payments.sk.options {
+    1 >
+    3 {
+            title = Hotovosť - osobný odber v predajni
+            extra = 0.00
+            taxClassId = 1
+            status = open
+    }
+    4 >
+}
+[end]
+
+page.10.variables {
+    basket = USER
+    basket {
+        userFunc = TYPO3\CMS\Extbase\Core\Bootstrap->run
+        extensionName = Cart
+        vendorName = Extcode
+        pluginName = MiniCart
+        switchableControllerActions{
+            Cart\CartPreview{
+                0 = show
+            }
+        }
+    }
+}
+
+config.tx_extbase.persistence.classes {
+    Runit\RtTemplate\Domain\Model\Order\Shipping {
+        mapping {
+            recordType = 0
+            tableName = tx_cart_domain_model_order_shipping
+        }
+    }
+}

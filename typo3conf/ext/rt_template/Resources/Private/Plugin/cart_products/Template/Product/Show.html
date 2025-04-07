@@ -1,0 +1,190 @@
+<html xmlns:f="http://typo3.org/ns/TYPO3/CMS/Fluid/ViewHelpers"
+      xmlns:cart="http://typo3.org/ns/Extcode/Cart/ViewHelpers"
+      xmlns:cartproducts="http://typo3.org/ns/Extcode/CartProducts/ViewHelpers"
+      data-namespace-typo3-fluid="true">
+
+    <f:layout name="Default"/>
+
+    <f:section name="main">
+        <cartproducts:canonicalTag product="{product}" />
+        <cart:metaTag property="og:title" content="{product.title}" />
+        <f:variable name="ogImage"><f:uri.image absolute="1" src="{product.firstImage.originalResource.originalFile.uid}" width="800c" height="800c"/></f:variable>        
+        <cart:metaTag property="og:image" content="{ogImage}" />
+        <cart:metaTag property="og:description" content="{product.description}" />
+        
+        <script type='text/javascript'>
+            var productId= '<f:format.htmlentitiesDecode>{product.uid}</f:format.htmlentitiesDecode>';
+            var productName = '<f:format.htmlentitiesDecode>{product.title}</f:format.htmlentitiesDecode>';
+            var productPrice = <f:format.htmlentitiesDecode>{product.price}</f:format.htmlentitiesDecode>;
+            setTimeout(function(){
+                gtag('event', 'view_item', {
+                'currency' : 'EUR',
+                'value' : productPrice,
+                'items': [
+                    {
+                        'item_id': productId,
+                        'item_name': productName,
+                        'productPrice': productPrice
+                    }
+                ]
+                });
+
+                ffbq('track', 'ViewContent', {currency: "EUR", value: <f:format.htmlentitiesDecode>{product.price}</f:format.htmlentitiesDecode>});
+            }, 1000);
+        </script>
+
+        <cart:format.nothing>
+            <cart:titleTag>
+                <f:format.htmlentitiesDecode>{product.title}</f:format.htmlentitiesDecode>
+            </cart:titleTag>
+        </cart:format.nothing>
+
+        <div class="breadcrumb clearfix">
+          <ul class="container">
+                <li class="home">
+                  <a class="home" href="/" title="">
+                    <i class="fa-home"></i>
+                  </a>
+                </li>
+                <li>
+                    <f:link.page>{product.category.title}</f:link.page>
+                </li>
+                <li class="last">{product.title}</li>
+          </ul>
+        </div>
+        
+        <div itemscope="" itemtype="https://schema.org/Product">
+            <div class="primary_block row">    
+                <!-- left infos-->
+                <div class="pb-left-column col-sm-7 col-md-7 col-lg-7">
+                    <!-- product img-->    
+                    <div id="image-block" class="clearfix is_caroucel">
+                        <span id="view_full_size">
+                            <f:image src="{product.firstImage.originalResource.originalFile.uid}" 
+                                     title="{product.firstImage.originalResource.title}"
+                                     alt="{product.firstImage.originalResource.title}"
+                                     width="{settings.showAction.media.image.size.medium.maxWidth}" 
+                                     height="{settings.showAction.media.image.size.medium.maxHeight}"
+                                     id="bigpic" 
+                                     additionalAttributes="{itemprop:'image'}"
+                                     width="800c" height="800c"
+                                     />
+                    </div> <!-- end image-block -->
+
+                    <p class="resetimg clear no-print">
+                        <span id="wrapResetImages" style="display: none;">
+                            <a href="https://ld-prestashop.template-help.com/prestashop_63336/index.php?id_product=10&amp;controller=product&amp;id_lang=1" data-id="resetImages">
+                                <i class="fa fa-repeat"></i>
+                                Display all pictures
+                            </a>
+                        </span>
+                    </p>
+                </div>
+                <!-- center infos -->
+                <div class="pb-right-column col-sm-5 col-md-5 col-lg-5">
+                    <h1 itemprop="name">{product.title}</h1>
+
+                    <f:format.raw>
+                        {product.teaser -> f:format.html()}
+                    </f:format.raw>
+                    <!-- add to cart form-->
+
+                    <f:cObject typoscriptObjectPath="lib.cartProduct.showForm" />
+
+                    <!-- thumbnails -->
+                    <div id="views_block" class="clearfix">
+                        <a id="view_scroll_left" class="" title="Other views" href="javascript:{}">
+                            Previous
+                        </a>
+                        <div id="thumbs_list">
+                            <ul id="thumbs_list_frame" >
+                                <f:if condition="{product.images}">
+
+
+                                    <f:if condition="{product.images -> f:count()} > 1">
+                                        <f:for each="{product.images}" as="image" iteration="i">
+                                            <li id="thumbnail_{i.cycle}" >
+                                                <a href="<f:uri.image image="{image}" width="800c" height="800c"/>" data-fancybox-group="other-views" class="fancybox" title="{product.title}">
+                                            <f:image image="{image}"
+                                                     title="{image.originalResource.title}"
+                                                     alt="{image.originalResource.title}"
+                                                     width="137c"
+                                                     maxHeight="137c" 
+                                                     class="img-responsive fancybox" 
+                                                     id="thumb_{i.cycle}" 
+                                                     additionalAttributes="{data-fancybox-group:'other-views'}"
+                                                     />
+
+                                            </a>
+                                            </li>
+
+                                        </f:for>
+                                    </f:if>
+                                </f:if>
+                            </ul>
+                        </div> <!-- end thumbs_list -->
+                        <a id="view_scroll_right" title="Other views" href="javascript:{}" >
+                            Next
+                        </a>
+                    </div> 
+                    
+                        <f:if condition="{product.relatedProducts}">
+                            <div class="similarProducts">
+                                <h4>Podobný produkt</h4>
+                                <ul>
+                                    <f:for each="{product.relatedProducts}" as="relatedProduct">
+                                        <li>
+                                        <f:render partial="Product/RelatedProduct" arguments="{product: relatedProduct}"/>
+                                        </li>
+                                    </f:for>
+                                </ul>
+                            </div>
+                        </f:if>
+
+                    <!-- end views-block -->
+                    <!-- end thumbnails -->
+                    
+                    
+                </div>
+                <f:if condition="{product.productContent}">
+                    <f:for each="{product.productContent}" as="content" iteration="iterator">
+                        <div class="col-md-6">
+                            <div id="content-{iterator.cycle}" class="content-element">
+                                <f:cObject typoscriptObjectPath="lib.renderContent" data="{content.uid}" />
+                            </div>
+                        </div>
+                    </f:for>
+                </f:if>
+                <!-- end center infos-->
+            </div> <!-- end primary_block -->
+            <div class="clearfix product-information">
+                <div class="tab-content">
+                    <div id="product-description-tab-content" class="product-description-tab-content tab-pane active">
+                        <div class="rte"><p>
+
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>    
+
+
+
+        <div>
+
+        </div>
+        <f:if condition="{product.tags}">
+            <div>
+                <f:for each="{product.tags}" as="tag">
+                    <span>{tag.title}</span>
+                </f:for>
+            </div>
+        </f:if>
+        
+        <p>
+            <div class="fb-like" data-href="" data-width="" data-layout="standard" data-action="recommend" data-size="small" data-share="true"></div>
+            <div class="fb-share-button" data-href="https://www.afrabio.sk<f:uri.action arguments="{product:product}"/>" data-layout="" data-size=""><a target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=<f:format.urlencode>https://www.afrabio.sk<f:uri.action arguments="{product:product}" absolute="1" /></f:format.urlencode>" class="fb-xfbml-parse-ignore">Zdieľať</a></div>
+        </p>
+    </f:section>
+</html>

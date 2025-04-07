@@ -1,0 +1,17 @@
+@media (min-width: 2000px) {
+  .footer-container #footer .footer2.wrap2 {
+    background-size: 100% auto; } }
+.footer-container #footer .footer2.wrap1 {
+  padding-bottom: 150px; }
+.footer-container #footer .footer2 #newsletter_block_left {
+  height: 350px;
+  padding-bottom: 15px; }
+  .footer-container #footer .footer2 #newsletter_block_left .desc {
+    color: white; }
+.footer-container #footer .footer2 .bottom-footer .container {
+  text-align: left; }
+
+@media (max-width: 767px) {
+  .footer-container #footer .footer2.wrap1 {
+    padding-bottom: 110px;
+    padding-top: 40px; } }

@@ -1,0 +1,396 @@
+body {
+        color:#555;
+}
+a,
+.breadcrumb li a {
+    color:#02924a;
+}
+
+#header {
+    
+}
+
+.slogan {
+    padding-top: 50px;
+    font-size: 19px;
+    text-align: left;
+}
+
+.header1 #header_logo {
+    background: #FFF;
+    display: inline-block;
+    margin-bottom: 15px;
+    max-width: 300px;
+    max-height: 240px;
+    padding: 15px 10px 0;
+    width: 100%;
+    margin-top: -31px;
+}
+
+.header1 #header_logo::before {
+    background: #FFF;
+    -moz-border-radius: 0 0 92% 92%;
+    -webkit-border-radius: 0;
+    border-radius: 0 0 92% 92%;
+    bottom: -34px;
+    content: '';
+    left: 50%;
+    height: 61%;
+    position: absolute;
+    transform: translateX(-50%);
+    width: 100%;
+    z-index: -1;
+}
+
+.header1 #header_logo a {
+    padding-bottom: 0;
+}
+
+.header1 .shop-phone {
+    padding-top: 40px;
+}
+
+.header1 .top_menu {
+    padding-top: 0px;
+    margin-bottom: 0px;
+}
+
+.header1 ul#header_links {
+    margin-bottom: 0px;
+}
+
+.top_menu ul.menu {
+    position: relative;
+    left:0;
+}
+#mainnavigation {
+    padding:0;
+}
+
+ul.menu {
+    margin-bottom: 0;
+}
+
+.top_menu > ul > li:hover ul.is-simplemenu {
+    
+}
+
+@media (max-width: 767px) {
+    #languages-block-top {
+        padding-top: 0px;
+        padding-bottom: 0px;
+        max-width: 50%;
+       float: left;
+    }
+}
+
+.frame {
+    padding:0;
+}
+
+.bp-page-content .image {
+    max-height:270px;
+    overflow:hidden;
+} 
+
+.shop-phone a {
+    text-transform: none;
+}
+
+.carousel .carousel-content {
+    background: rgba(50,50,50,0.5);
+}
+
+.carousel .carousel-content h1,
+.carousel .carousel-content h2 {
+    font-weight:bold;
+}
+
+.carousel .carousel-item {
+    padding: 0;
+}
+.carousel-item-type-header .carousel-text-inner {
+    margin-top:-120px;
+}
+
+.product_list .form-message {
+    position: absolute;
+    margin-left: -53px;
+    margin-top:5px;
+}
+
+.sale-box {
+    background:none;
+    transform: none;
+    right:-3px;
+    top:auto;
+    bottom:9px;
+}
+
+ul.list-normal  {
+    margin-top:-10px;
+}
+.list-normal li {
+    padding-left: 0.5em;
+}
+.list-normal li::before {
+  content: "• ";
+  color: #02924a; 
+}
+
+#quantity_wanted_p {
+    float:left;
+    margin-top:8px;
+    margin-left:0;
+}
+
+#add_to_cart_product_page_button {
+    padding-top:0px;
+}
+
+.relatedProductTitle {
+    width:150px;
+    float: left;
+}
+
+.categoryDescription {
+    margin:20px 0; 
+    box-shadow: 0px 0px 10px 6px rgba(0, 0, 0, 0.3);
+    padding:10px;
+}
+
+.similarProducts {
+    padding-top:100px;
+}
+
+.footer-section-meta {
+    text-align: left;
+}
+
+.top_menu > ul > li > ul.is-simplemenu{
+    top:29px;
+    
+}
+
+#page-content header {
+    position:unset;
+}
+
+.bp-page-content .image {
+    max-height: none;
+}
+
+.pswp {
+    z-index:6000;
+}
+
+.gallery-item .caption {
+    margin-bottom: 20px;
+}
+
+
+#commentShopDelivery {
+    display:none;
+    color:#d9534f;
+    font-weight:bold;
+}
+
+.om-cookie-panel label {
+    color: #000;
+}
+.om-cookie-panel input[type="checkbox"] + label:after {
+    display: none;
+}
+.om-cookie-panel button {
+    font-family: "Ubuntu",sans-serif;
+}
+
+.om-cookie-panel .cookie-panel__button--color--green {
+    background-color: #02924a;
+}
+
+.cookie-panel__attribution {
+    display:none;
+}
+
+.breadcrumb ul {
+    padding-top:0;
+}
+
+.basket-create-account label{
+    color: #02924a;
+    font-weight: bold;
+}
+
+@media (min-width: 768px) {
+    .left-icons {
+        position:fixed;
+        left:-10px;
+        top:33%;
+        background:url(/typo3conf/ext/rt_template/Resources/Public/Icons/5top.png) no-repeat;
+        background-color: rgba(255,255,255,0.9);
+        background-size: cover;
+        height:370px;
+        width:100px;
+    }
+
+    .left-icons:hover {
+        width:796px;
+        background-color:#fff;
+        border-radius: 3px;
+        box-shadow: 0px 0px 10px 6px rgba(0,0,0,0.3);
+        z-index:10;
+    }
+}
+
+.login-menu {
+    float: right;
+    clear: both;
+}
+
+.login-menu a {
+    display:block;
+    
+}
+
+.login-menu a:first-of-type {
+    margin:10px 0 0 0;
+}
+
+.tx_evoweb_sfregister .form-row {
+    clear: both;
+    display: block;
+    margin-top: 25px;
+}
+
+.btn-primary {
+    color:#009846;
+    border-color: #009846;
+}
+
+.formerrors {
+    display:none;
+}
+.errorMessage {
+    color: #e7433b;
+}
+
+.main-section {
+    margin-bottom: 10px;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+#page {
+    min-height: 100%;
+    margin-bottom: -50px;
+}
+
+.footer-margin,
+.bp-page-footer {
+    height: 50px;
+}
+
+.bp-page-footer {
+    background: #212121;
+}
+
+.remove-coupon-link {
+    float:right;
+}
+
+@media (max-width: 767px) {
+    .slogan {
+        padding-top:15px;
+        padding-bottom:15px;
+        clear:both;
+    }
+    .slogan br {
+        display:none;
+    }
+    .logo {
+        width:100px;
+    }
+    
+    .login-menu a:first-of-type {
+        margin-top:4px;
+    }
+}
+
+.shopping_cart {
+    padding-top: 3px;
+}
+
+.social-links {
+    vertical-align: top;
+}
+
+.carousel .carousel-item h1, .carousel .carousel-item h2 {
+    color:#fff;
+}
+
+
+#thumbs_list li + li {
+    margin-left:0;
+}
+#thumbs_list li img {
+    border-radius:20px;
+}
+
+.btn-primary {
+    border-radius: 10px;
+}
+.btn-primary:hover {
+    background: #009846;
+    color: #fff;
+    border-color: #009846;
+}
+
+.frame {
+    --frame-outer-spacing-variant-extra-large: 10rem;
+}
+
+.textpic-right h2 {
+    text-align: right;
+    margin-right:1rem;
+}
+
+.gallery-item {
+    box-shadow: 0px 0px 10px 6px rgba(0,0,0,0.3)
+}
+
+@media (max-width: 767px) {
+    .basket-create-account {
+        margin-left:2rem;
+        
+    }
+    
+    .accept-text {
+        margin-left:2rem;
+        margin-right:2rem;
+    }
+    
+    .pull-right .btn {
+        margin-right:2rem;
+    }
+}
+
+.all-reviews-link .btn {
+    color: #02924a !important;
+    border: 1px solid #02924a !important;
+}
+
+.extbase-debugger input[type="checkbox"] {
+    display:block;
+}
+
+ul.product_list.grid > li .product-container {
+    background: #fff;
+}
+
+#c243 {
+    padding-top:30px;
+}
